@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dance Event Registration - Animated</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('https://images.unsplash.com/photo-1580136579596-fb70b369ebaa?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(2px);
+}
+
+.overlay {
+  background-color: rgba(255, 192, 203, 0.75);
+  padding: 50px 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeSlideIn 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  width: 90%;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.dance-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  box-shadow: 0 3px 8px rgba(204, 0, 102, 0.4);
+}
+
+h2 {
+  color: #b30059;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #b30059;
+  outline: none;
+}
+
+.gender-options,
+.experience-options {
+  margin-top: 6px;
+  text-align: left;
+}
+
+.gender-options label,
+.experience-options label {
+  font-weight: normal;
+  margin-right: 15px;
+  color: #444;
+}
+
+input[type="radio"] {
+  margin-right: 6px;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #b30059;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #99004d;
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+    margin: 15px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <div class="form-container" role="form" aria-labelledby="formTitle">
+      <img
+        src="C:\Users\wbcom\OneDrive\Desktop\IMG.JPG"
+        alt="Dance pose"
+        class="dance-image"
+      />
+      <h2 id="formTitle">Dance Event Registration</h2>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name"  />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email"  />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone"  />
+
+        <label>Gender</label>
+        <div class="gender-options" role="radiogroup" aria-labelledby="genderLabel">
+          <label><input type="radio" name="gender" value="male" required /> Male</label>
+          <label><input type="radio" name="gender" value="female" /> Female</label>
+          <label><input type="radio" name="gender" value="other" /> Other</label>
+        </div>
+
+       <label>Preferred Dance Style</label>
+  <div class="dance-style-options">
+  <label><input type="checkbox" name="style" value="ballet" /> Ballet</label>
+  <label><input type="checkbox" name="style" value="hiphop" /> Hip-Hop</label>
+  <label><input type="checkbox" name="style" value="salsa" /> Salsa</label>
+  <label><input type="checkbox" name="style" value="contemporary" /> Contemporary</label>
+  <label><input type="checkbox" name="style" value="bharatanatyam" /> Bharatanatyam</label>
+  </div>
+        <label>Experience Level</label>
+        <div class="experience-options" role="radiogroup" aria-labelledby="experienceLabel">
+          <label><input type="radio" name="experience" value="beginner" required /> Beginner</label>
+          <label><input type="radio" name="experience" value="intermediate" /> Intermediate</label>
+          <label><input type="radio" name="experience" value="advanced" /> Advanced</label>
+        </div>
+
+        <label for="time">Preferred Class Time</label>
+        <select id="time" name="time" required>
+          <option value="">--Choose a Time Slot--</option>
+          <option value="morning">Morning (8 AM - 10 AM)</option>
+          <option value="afternoon">Afternoon (1 PM - 3 PM)</option>
+          <option value="evening">Evening (5 PM - 7 PM)</option>
+        </select>
+
+        <button type="submit">Register Now</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
